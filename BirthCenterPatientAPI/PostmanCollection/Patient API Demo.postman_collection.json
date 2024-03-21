@@ -1,0 +1,396 @@
+{
+  "info": {
+    "_postman_id": "7a29c876-ee15-43bf-96ec-f1254d15ba2c",
+    "name": "Patient API Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32416770"
+  },
+  "item": [
+    {
+      "name": "GetPatientsByDateRange",
+      "item": [
+        {
+          "name": "BirthDayToday",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom=2024-03-01T00:00:00&dateTo=2024-03-31T23:59:59",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5047",
+              "path": [
+                "api",
+                "Patients",
+                "searchByDateRange"
+              ],
+              "query": [
+                {
+                  "key": "dateFrom",
+                  "value": "2024-03-01T00:00:00"
+                },
+                {
+                  "key": "dateTo",
+                  "value": "2024-03-31T23:59:59"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BirthDayInLastWeek",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom=2024-03-12T00:00:00&dateTo=2024-03-19T23:59:59",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5047",
+              "path": [
+                "api",
+                "Patients",
+                "searchByDateRange"
+              ],
+              "query": [
+                {
+                  "key": "dateFrom",
+                  "value": "2024-03-12T00:00:00"
+                },
+                {
+                  "key": "dateTo",
+                  "value": "2024-03-19T23:59:59"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BirthDayThisMonth",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom=2024-03-01T00:00:00&dateTo=2024-03-19T23:59:59",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5047",
+              "path": [
+                "api",
+                "Patients",
+                "searchByDateRange"
+              ],
+              "query": [
+                {
+                  "key": "dateFrom",
+                  "value": "2024-03-01T00:00:00"
+                },
+                {
+                  "key": "dateTo",
+                  "value": "2024-03-19T23:59:59"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BirthDayLastMonth",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom=2024-03-01T00:00:00&dateTo=2024-03-31T23:59:59",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5047",
+              "path": [
+                "api",
+                "Patients",
+                "searchByDateRange"
+              ],
+              "query": [
+                {
+                  "key": "dateFrom",
+                  "value": "2024-03-01T00:00:00"
+                },
+                {
+                  "key": "dateTo",
+                  "value": "2024-03-31T23:59:59"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "BirthDayCurrentYear",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom=2024-01-01T00:00:00&dateTo=2024-03-19T23:59:59",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5047",
+              "path": [
+                "api",
+                "Patients",
+                "searchByDateRange"
+              ],
+              "query": [
+                {
+                  "key": "dateFrom",
+                  "value": "2024-01-01T00:00:00"
+                },
+                {
+                  "key": "dateTo",
+                  "value": "2024-03-19T23:59:59"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Add New Patient",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"patronymic\": \"Smith\",\r\n  \"gender\": 1,\r\n  \"birthDate\": \"1990-01-01\",\r\n  \"active\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5047/api/Patients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patient Update",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Patient record updated successfully\", function () {\r",
+              "    pm.response.to.have.status(204);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"3FA85F64-5717-4562-B3FC-2C963F66AFA6\",\r\n  \"firstName\": \"JohnUpdated\",\r\n  \"lastName\": \"SmithUpd\",\r\n  \"patronymic\": null,\r\n  \"gender\": 1, \r\n  \"birthDate\": \"1993-01-01T00:00:00\",\r\n  \"active\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/3FA85F64-5717-4562-B3FC-2C963F66AFA6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "3FA85F64-5717-4562-B3FC-2C963F66AFA6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patient by Id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/3FA85F64-5717-4562-B3FC-2C963F66AFA6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "3FA85F64-5717-4562-B3FC-2C963F66AFA6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patient by Last Name",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/searchByLastName?lastName=SmithUpd",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "searchByLastName"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "SmithUpd"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patients by Date Range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/searchByDateRange?dateFrom =2023-01-01T00:00:00&dateTo=2023-12-31T23:59:59",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "searchByDateRange"
+          ],
+          "query": [
+            {
+              "key": "dateFrom ",
+              "value": "2023-01-01T00:00:00"
+            },
+            {
+              "key": "dateTo",
+              "value": "2023-12-31T23:59:59"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patient by Bitrh Date",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/searchByBirthDate?birthDate=1990-01-01T00:00:00",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "searchByBirthDate"
+          ],
+          "query": [
+            {
+              "key": "birthDate",
+              "value": "1990-01-01T00:00:00"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Patient by Id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Patient record deleted successfully\", function () {\r",
+              "    pm.response.to.have.status(204);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5047/api/Patients/3FA85F64-5717-4562-B3FC-2C963F66AFA6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5047",
+          "path": [
+            "api",
+            "Patients",
+            "3FA85F64-5717-4562-B3FC-2C963F66AFA6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
