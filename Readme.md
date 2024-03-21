@@ -1,17 +1,3 @@
-2. **Configure the database:** 
-- Edit the `appsettings.json` file to specify the connection string to your database.
-- Run the migrations to create the necessary tables in the database:
-  ```
-  dotnet ef database update
-  ```
-
-3. **Run the project:**
-- Open a terminal in the root directory of the project.
-- Execute the command:
-  ```
-  dotnet run
-  ```
-
 ## Using the API
 
 ### API Resources
