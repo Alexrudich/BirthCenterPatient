@@ -2,7 +2,7 @@
 
 ### API Resources
 
-- `api/Patients`: This endpoint provides access to CRUD operations for patients.
+- `api/BirthCenterPatientAPI`: This endpoint provides access to CRUD operations for patients.
 
 ### Import Postman Collection
 
